@@ -1,0 +1,85 @@
+{
+  "keep": {
+    "days": true,
+    "amount": 10
+  },
+  "auditLog": "E:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\Cow-Hut-Backend\\logs\\winston\\error\\.7748070d383889d6943e3d5d6f3770738fe8ada3-audit.json",
+  "files": [
+    {
+      "date": 1686850891946,
+      "name": "E:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\Cow-Hut-Backend\\logs\\winston\\error\\CH-2023-06-15-23-error.log",
+      "hash": "dd24ced38eb8e3435227e48085cf41a546fc4836280dbac6ff77e756505601cb"
+    },
+    {
+      "date": 1686909006407,
+      "name": "E:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\Cow-Hut-Backend\\logs\\winston\\error\\CH-2023-06-16-15-error.log",
+      "hash": "2e68d3afe45fd8f5bf81a1a09abdcca6442733945894a3b2ba2f63a0b024e50b"
+    },
+    {
+      "date": 1686911269286,
+      "name": "E:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\Cow-Hut-Backend\\logs\\winston\\error\\CH-2023-06-16-16-error.log",
+      "hash": "4ba2641bdc11d62a9e64eecd920408b2bd287e4fc6691f7a53d8c9c7d5d40539"
+    },
+    {
+      "date": 1686913761732,
+      "name": "E:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\Cow-Hut-Backend\\logs\\winston\\error\\CH-2023-06-16-17-error.log",
+      "hash": "ed1082d8f355febf3d570379b55816f867588c871a31ca389bb6862c298b47ac"
+    },
+    {
+      "date": 1686916997004,
+      "name": "E:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\Cow-Hut-Backend\\logs\\winston\\error\\CH-2023-06-16-18-error.log",
+      "hash": "241f7296804cc101654034518bf6d5cf2ebb83bb2941c4da655b08fd5a1bbd3e"
+    },
+    {
+      "date": 1686922950134,
+      "name": "E:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\Cow-Hut-Backend\\logs\\winston\\error\\CH-2023-06-16-19-error.log",
+      "hash": "80c33d96c98786da1265ede9adcb4fb199c8e377c30d80aee5b68012eff25d3b"
+    },
+    {
+      "date": 1686924778258,
+      "name": "E:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\Cow-Hut-Backend\\logs\\winston\\error\\CH-2023-06-16-20-error.log",
+      "hash": "e43f5b2a120c0b4ee3c89d108af0fa5c857e8954a3db762033612ca55144462b"
+    },
+    {
+      "date": 1686932898743,
+      "name": "E:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\Cow-Hut-Backend\\logs\\winston\\error\\CH-2023-06-16-22-error.log",
+      "hash": "0375ed17c143a72c4cee55d2d86fffef902fc25682b7bec6dcbffac8c9bea0e2"
+    },
+    {
+      "date": 1686935681079,
+      "name": "E:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\Cow-Hut-Backend\\logs\\winston\\error\\CH-2023-06-16-23-error.log",
+      "hash": "1b7f255abb849a021d33a838f5d34b87ff7da0c9434a7483211b9f3e89e75874"
+    },
+    {
+      "date": 1686938493525,
+      "name": "E:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\Cow-Hut-Backend\\logs\\winston\\error\\CH-2023-06-17-00-error.log",
+      "hash": "d3005087addfd7c092587c2336781f04e2e6c0011552baf747236dae9bedb84b"
+    },
+    {
+      "date": 1686974194307,
+      "name": "E:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\Cow-Hut-Backend\\logs\\winston\\error\\CH-2023-06-17-09-error.log",
+      "hash": "1fadb52c41c06c8a207e1d582a4c4194932d18c245e2c2e0860eaaf2197b41df"
+    },
+    {
+      "date": 1686976352720,
+      "name": "E:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\Cow-Hut-Backend\\logs\\winston\\error\\CH-2023-06-17-10-error.log",
+      "hash": "3fb9441a6f5f74cf4e416505c62d2443cefafa7855457dfbcf641bf5d7783aaf"
+    },
+    {
+      "date": 1686978479823,
+      "name": "E:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\Cow-Hut-Backend\\logs\\winston\\error\\CH-2023-06-17-11-error.log",
+      "hash": "787cf3c99e0fef86c2f3888baaf0eae80bf3f2659696b48c34d2d8277541f41d"
+    },
+    {
+      "date": 1686981643851,
+      "name": "E:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\Cow-Hut-Backend\\logs\\winston\\error\\CH-2023-06-17-12-error.log",
+      "hash": "d0cae621787aafcde237948554e6fc9f8f2985a362a69753b0d8bd08f9644103"
+    },
+    {
+      "date": 1686985270900,
+      "name": "E:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\Cow-Hut-Backend\\logs\\winston\\error\\CH-2023-06-17-13-error.log",
+      "hash": "36c8c1f2607d936fe125f4c4550ad44e44e2c030bb86bcab814cf7065c137773"
+    }
+  ],
+  "hashType": "sha256"
+}

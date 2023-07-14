@@ -1,0 +1,85 @@
+{
+  "keep": {
+    "days": true,
+    "amount": 10
+  },
+  "auditLog": "E:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\Cow-Hut-Backend\\logs\\winston\\success\\.702eff27d82e072935685541ee4e6af6f892e1da-audit.json",
+  "files": [
+    {
+      "date": 1686850891932,
+      "name": "E:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\Cow-Hut-Backend\\logs\\winston\\success\\CH-2023-06-15-23-success.log",
+      "hash": "3d5a97cc47a338af4f686644d951e0239264a13f493047017fab50d0ab8d0a1b"
+    },
+    {
+      "date": 1686909006393,
+      "name": "E:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\Cow-Hut-Backend\\logs\\winston\\success\\CH-2023-06-16-15-success.log",
+      "hash": "bdfbbed874b44346fb65e01ccb50c7b198934eb5596e7c038b7821d2d975c5bf"
+    },
+    {
+      "date": 1686911269262,
+      "name": "E:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\Cow-Hut-Backend\\logs\\winston\\success\\CH-2023-06-16-16-success.log",
+      "hash": "1d301ab3f753f2f5017e3895eb107803f08048ccbd82cfe515351380e7e1af16"
+    },
+    {
+      "date": 1686913761718,
+      "name": "E:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\Cow-Hut-Backend\\logs\\winston\\success\\CH-2023-06-16-17-success.log",
+      "hash": "f81bf78bd9ba51ed63fdcdb3c82a77328f33827e142c2b183d43c3bb5be4efb9"
+    },
+    {
+      "date": 1686916996996,
+      "name": "E:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\Cow-Hut-Backend\\logs\\winston\\success\\CH-2023-06-16-18-success.log",
+      "hash": "3436705706be3a438317496b2aeb88fcc9dc480ed496d16b441e789026955d55"
+    },
+    {
+      "date": 1686922950125,
+      "name": "E:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\Cow-Hut-Backend\\logs\\winston\\success\\CH-2023-06-16-19-success.log",
+      "hash": "b78cee3e8459f15dfaac874d240c83ead870239a5af117d390a0a1579304ad5b"
+    },
+    {
+      "date": 1686924778246,
+      "name": "E:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\Cow-Hut-Backend\\logs\\winston\\success\\CH-2023-06-16-20-success.log",
+      "hash": "9f19e44450966ed2bec57af40fbda643d6b0b3e66df9a28d270b2ae6c0927631"
+    },
+    {
+      "date": 1686932898726,
+      "name": "E:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\Cow-Hut-Backend\\logs\\winston\\success\\CH-2023-06-16-22-success.log",
+      "hash": "32a7ccc6b7b872556f9e9c9a159e459fc54972e47b13bcc60a4d49e8c55457d1"
+    },
+    {
+      "date": 1686935681067,
+      "name": "E:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\Cow-Hut-Backend\\logs\\winston\\success\\CH-2023-06-16-23-success.log",
+      "hash": "4eab87118ba3d5ccd10ba3e4f8e48d81e145133143b266256441938ebf1992a5"
+    },
+    {
+      "date": 1686938493515,
+      "name": "E:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\Cow-Hut-Backend\\logs\\winston\\success\\CH-2023-06-17-00-success.log",
+      "hash": "4f2624bcf7c000f2ee335bbc6edb0d7c631fb7fa82a1dee44c60a16282607373"
+    },
+    {
+      "date": 1686974194288,
+      "name": "E:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\Cow-Hut-Backend\\logs\\winston\\success\\CH-2023-06-17-09-success.log",
+      "hash": "3f55dbe44c7de254a1b50be1dd877440ecdb414be3705ecc8c5dcf214e332c88"
+    },
+    {
+      "date": 1686976352711,
+      "name": "E:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\Cow-Hut-Backend\\logs\\winston\\success\\CH-2023-06-17-10-success.log",
+      "hash": "0e94016d829a8de14cd371a3bdea1f32ee57c078d62729a65fc0f8cf81457b75"
+    },
+    {
+      "date": 1686978479809,
+      "name": "E:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\Cow-Hut-Backend\\logs\\winston\\success\\CH-2023-06-17-11-success.log",
+      "hash": "1ae4fc586894ccf2d2d7cae84f78ef89f0a2f77fbbb0ff989e3988ea22c0b258"
+    },
+    {
+      "date": 1686981600703,
+      "name": "E:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\Cow-Hut-Backend\\logs\\winston\\success\\CH-2023-06-17-12-success.log",
+      "hash": "4fafe3bb67bb91178b3e19fc278497a73d2ddeea3f08cfcd5250523f20e767a5"
+    },
+    {
+      "date": 1686985270894,
+      "name": "E:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\Cow-Hut-Backend\\logs\\winston\\success\\CH-2023-06-17-13-success.log",
+      "hash": "e48a2f7389daa834a2606db144d68f972b75f78774d78952cde67efe4b33aed6"
+    }
+  ],
+  "hashType": "sha256"
+}
