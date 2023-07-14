@@ -1,6 +1,6 @@
 import express from 'express';
 import validateRequest from '../../middlewares/validateRequest';
-import { CowValidation } from './book.validation';
+import { BookValidation } from './book.validation';
 import { BookController } from './book.controller';
 import { ENUM_USER_ROLE } from '../../../enums/user';
 import auth from '../../middlewares/auth';
@@ -9,7 +9,7 @@ const router = express.Router();
 router.post(
   '/',
   auth(ENUM_USER_ROLE.SELLER),
-  validateRequest(CowValidation.createCowZodValidation),
+  validateRequest(BookValidation.createBookZodValidation),
   BookController.createBook
 );
 
@@ -24,7 +24,7 @@ router.delete('/:id', auth(ENUM_USER_ROLE.SELLER), BookController.deleteBook);
 router.patch(
   '/:id',
   auth(ENUM_USER_ROLE.SELLER),
-  validateRequest(CowValidation.updateCowZodValidation),
+  validateRequest(BookValidation.updateBookZodValidation),
   BookController.updateBook
 );
 
@@ -34,4 +34,4 @@ router.get(
   BookController.getAllBooks
 );
 
-export const CowRouter = router;
+export const BookRouter = router;

@@ -11,7 +11,6 @@ const userSchema = new Schema<IUser, UserModel>(
     password: {
       type: String,
       required: true,
-      unique: true,
       select: 0,
     },
     role: {
@@ -19,32 +18,12 @@ const userSchema = new Schema<IUser, UserModel>(
       enum: role,
     },
     name: {
-      firstName: {
-        type: String,
-        required: true,
-      },
-      lastName: {
-        type: String,
-        required: true,
-      },
+      type: String,
+      required: true,
     },
     phoneNumber: {
       type: String,
       required: true,
-      unique: true,
-    },
-    address: {
-      type: String,
-      required: true,
-    },
-    budget: {
-      type: Number,
-      required: true,
-    },
-    income: {
-      type: Number,
-      required: true,
-      default: 0,
     },
   },
   {

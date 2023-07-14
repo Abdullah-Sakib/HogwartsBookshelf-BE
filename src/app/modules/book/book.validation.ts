@@ -1,35 +1,26 @@
 import { z } from 'zod';
-import { category, label, location } from './book.constants';
 
-const createCowZodValidation = z.object({
+const createBookZodValidation = z.object({
   body: z.object({
-    name: z.string(),
-    age: z.number(),
-    price: z.number(),
-    location: z.enum([...location] as [string, ...string[]]),
-    breed: z.string(),
-    weight: z.number(),
-    label: z.enum([...label] as [string, ...string[]]),
-    category: z.enum([...category] as [string, ...string[]]),
-    seller: z.string(),
+    title: z.string(),
+    author: z.string(),
+    genre: z.string(),
+    publication_date: z.string(),
+    image: z.string(),
   }),
 });
 
-const updateCowZodValidation = z.object({
+const updateBookZodValidation = z.object({
   body: z.object({
-    name: z.string().optional(),
-    age: z.number().optional(),
-    price: z.number().optional(),
-    location: z.enum([...location] as [string, ...string[]]).optional(),
-    breed: z.string().optional(),
-    weight: z.number().optional(),
-    label: z.enum([...label] as [string, ...string[]]).optional(),
-    category: z.enum([...category] as [string, ...string[]]).optional(),
-    seller: z.string().optional(),
+    title: z.string().optional(),
+    author: z.string().optional(),
+    genre: z.string().optional(),
+    publication_date: z.string().optional(),
+    image: z.string().optional(),
   }),
 });
 
-export const CowValidation = {
-  createCowZodValidation,
-  updateCowZodValidation,
+export const BookValidation = {
+  createBookZodValidation,
+  updateBookZodValidation,
 };

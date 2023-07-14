@@ -10,8 +10,6 @@ import httpStatus from 'http-status';
 import ApiError from '../../../errors/apiError';
 import { JwtPayload } from 'jsonwebtoken';
 import { bcryptHelpers } from '../../../helper/bcryptHelpers';
-import { Admin } from '../admin/admin.model';
-import { IAdmin } from '../admin/admin.interface';
 
 const getAllUsers = async (
   filters: IUserFilter,
@@ -104,13 +102,11 @@ const deleteUser = async (id: string): Promise<IUser | null> => {
 
 const getMyProfile = async (
   payload: JwtPayload | null
-): Promise<IUser | null | IAdmin> => {
+): Promise<IUser | null> => {
   let result = null;
-  if (payload?.role === 'admin') {
-    result = await Admin.findById(payload?.id);
-  } else {
-    result = await User.findById({ _id: payload?.id });
-  }
+
+  result = await User.findById({ _id: payload?.id });
+
   return result;
 };
 
