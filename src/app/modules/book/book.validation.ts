@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { category, label, location } from './cow.constants';
+import { category, label, location } from './book.constants';
 
 const createCowZodValidation = z.object({
   body: z.object({

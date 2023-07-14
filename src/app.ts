@@ -18,7 +18,7 @@ app.use(cookieParser());
 app.use('/api/v1', router);
 
 app.get('/', (req: Request, res: Response) => {
-  res.send({ message: 'Ak bishal goru chagoler hut.' });
+  res.send({ message: 'Hogwarts Bookshelf is open for you' });
 });
 
 // global error handler

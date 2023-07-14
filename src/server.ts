@@ -18,7 +18,7 @@ async function bootstrap() {
 
     server = app.listen(configs.port, () => {
       console.log(
-        `Ak birat goru chagoler hut choliteche port ${configs.port} a. Hambaaaaaaaaa 🐄`
+        `Server is running on port ${configs.port}`
       );
     });
   } catch (error) {

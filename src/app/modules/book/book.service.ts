@@ -1,34 +1,34 @@
 import { SortOrder } from 'mongoose';
 import { paginationHelper } from '../../../helper/paginationHelper';
 import { IPaginationOptions } from '../../../interfaces/pagination';
-import { cowSearchableFields } from './cow.constants';
-import { ICow, ICowFilter } from './cow.interface';
-import { Cow } from './cow.model';
 import { IGenericResponse } from '../../../interfaces/common';
 import httpStatus from 'http-status';
 import ApiError from '../../../errors/apiError';
-import { User } from '../user/user.model';
+// import { User } from '../user/user.model';
 import { JwtPayload } from 'jsonwebtoken';
+import { IBook, IBookFilter } from './book.interface';
+import { Book } from './book.model';
+import { bookSearchableFields } from './book.constants';
 
-const createCow = async (payload: ICow): Promise<ICow | null> => {
-  const seller = await User.find({ _id: payload?.seller });
-  if (seller.length === 0) {
-    throw new ApiError(httpStatus.NOT_FOUND, 'Seller not found');
-  }
-  const result = (await Cow.create(payload)).populate('seller');
+const createBook = async (payload: IBook): Promise<IBook | null> => {
+  // const seller = await User.find({});
+  // if (seller.length === 0) {
+  //   throw new ApiError(httpStatus.NOT_FOUND, 'Seller not found');
+  // }
+  const result = (await Book.create(payload)).populate('seller');
   return result;
 };
 
-const getAllCows = async (
-  filters: ICowFilter,
+const getAllBooks = async (
+  filters: IBookFilter,
   paginationOptions: IPaginationOptions
-): Promise<IGenericResponse<ICow[]>> => {
+): Promise<IGenericResponse<IBook[]>> => {
   const { searchTerm, ...filtersData } = filters;
 
   const andConditions = [];
   if (searchTerm) {
     andConditions.push({
-      $or: cowSearchableFields.map(field => ({
+      $or: bookSearchableFields.map(field => ({
         [field]: {
           $regex: searchTerm,
           $options: 'i',
@@ -66,13 +66,13 @@ const getAllCows = async (
   const whereCondition =
     andConditions?.length > 0 ? { $and: andConditions } : {};
 
-  const result = await Cow.find(whereCondition)
+  const result = await Book.find(whereCondition)
     .populate('seller')
     .sort(sortCondition)
     .skip(skip)
     .limit(limit);
 
-  const total = await Cow.countDocuments(whereCondition);
+  const total = await Book.countDocuments(whereCondition);
 
   return {
     meta: {
@@ -84,17 +84,17 @@ const getAllCows = async (
   };
 };
 
-const getSingleCow = async (id: string): Promise<ICow | null> => {
-  const result = await Cow.findById(id).populate('seller');
+const getSingleBook = async (id: string): Promise<IBook | null> => {
+  const result = await Book.findById(id).populate('seller');
   return result;
 };
 
-const deleteCow = async (
+const deleteBook = async (
   id: string,
   seller: JwtPayload | null
-): Promise<ICow | null> => {
+): Promise<IBook | null> => {
   // check if the user is the owner of this cow or not.
-  const isSellerMatch = await Cow.findOne({
+  const isSellerMatch = await Book.findOne({
     $and: [{ _id: id }, { seller: seller && seller?.id }],
   });
   if (!isSellerMatch) {
@@ -104,22 +104,22 @@ const deleteCow = async (
     );
   }
 
-  const result = await Cow.findByIdAndDelete(id).populate('seller');
+  const result = await Book.findByIdAndDelete(id).populate('seller');
   return result;
 };
 
-const updateCow = async (
+const updateBook = async (
   id: string,
-  payload: Partial<ICow>,
+  payload: Partial<IBook>,
   seller: JwtPayload | null
-): Promise<ICow | null> => {
-  const isExist = await Cow.findOne({ _id: id });
+): Promise<IBook | null> => {
+  const isExist = await Book.findOne({ _id: id });
   if (!isExist) {
     throw new ApiError(httpStatus.BAD_REQUEST, 'cow not found');
   }
 
   // check if the user is the owner of this cow or not.
-  const isSellerMatch = await Cow.findOne({
+  const isSellerMatch = await Book.findOne({
     $and: [{ _id: id }, { seller: seller && seller?.id }],
   });
   if (!isSellerMatch) {
@@ -129,17 +129,17 @@ const updateCow = async (
     );
   }
 
-  const result = await Cow.findOneAndUpdate({ _id: id }, payload, {
+  const result = await Book.findOneAndUpdate({ _id: id }, payload, {
     new: true,
   }).populate('seller');
 
   return result;
 };
 
-export const CowService = {
-  createCow,
-  getAllCows,
-  getSingleCow,
-  deleteCow,
-  updateCow,
+export const BookService = {
+  createBook,
+  getAllBooks,
+  getSingleBook,
+  deleteBook,
+  updateBook,
 };
