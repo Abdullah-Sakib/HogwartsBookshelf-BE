@@ -4,18 +4,18 @@ import { IPaginationOptions } from '../../../interfaces/pagination';
 import { IGenericResponse } from '../../../interfaces/common';
 import httpStatus from 'http-status';
 import ApiError from '../../../errors/apiError';
-// import { User } from '../user/user.model';
 import { JwtPayload } from 'jsonwebtoken';
 import { IBook, IBookFilter } from './book.interface';
 import { Book } from './book.model';
 import { bookSearchableFields } from './book.constants';
+import { User } from '../user/user.model';
 
 const createBook = async (payload: IBook): Promise<IBook | null> => {
-  // const seller = await User.find({});
-  // if (seller.length === 0) {
-  //   throw new ApiError(httpStatus.NOT_FOUND, 'Seller not found');
-  // }
-  const result = (await Book.create(payload)).populate('seller');
+  const user = await User.find({ _id: payload.creator });
+  if (user.length === 0) {
+    throw new ApiError(httpStatus.NOT_FOUND, 'user not found');
+  }
+  const result = await Book.create(payload);
   return result;
 };
 
@@ -40,19 +40,9 @@ const getAllBooks = async (
   if (Object.keys(filtersData).length > 0) {
     andConditions.push({
       $and: Object.entries(filtersData).map(([field, value]) => {
-        if (field === 'maxPrice') {
-          return {
-            price: { $lte: value },
-          };
-        } else if (field === 'minPrice') {
-          return {
-            price: { $gte: value },
-          };
-        } else {
-          return {
-            [field]: value,
-          };
-        }
+        return {
+          [field]: value,
+        };
       }),
     });
   }
@@ -67,7 +57,7 @@ const getAllBooks = async (
     andConditions?.length > 0 ? { $and: andConditions } : {};
 
   const result = await Book.find(whereCondition)
-    .populate('seller')
+    .populate('reviews')
     .sort(sortCondition)
     .skip(skip)
     .limit(limit);

@@ -28,6 +28,22 @@ const bookSchema = new Schema(
       type: String,
       required: true,
     },
+    reviews: [
+      {
+        userName: {
+          type: String,
+          required: true,
+        },
+        review: {
+          type: String,
+          required: true,
+        },
+        userEmail: {
+          type: String,
+          required: true,
+        },
+      },
+    ],
   },
   {
     timestamps: true,
