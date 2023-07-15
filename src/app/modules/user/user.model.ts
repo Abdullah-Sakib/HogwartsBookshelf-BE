@@ -21,9 +21,14 @@ const userSchema = new Schema<IUser, UserModel>(
       type: String,
       required: true,
     },
-    phoneNumber: {
+    phone: {
       type: String,
       required: true,
+    },
+    email: {
+      type: String,
+      required: true,
+      unique: true,
     },
   },
   {
@@ -38,10 +43,10 @@ const userSchema = new Schema<IUser, UserModel>(
 );
 
 userSchema.methods.isUserExist = async function (
-  phoneNumber: string
+  email: string
 ): Promise<Pick<IUser, 'role' | 'password' | '_id'> | null> {
   return await User.findOne(
-    { phoneNumber },
+    { email: email },
     { _id: 1, role: 1, password: 1 }
   ).select('+password');
 };

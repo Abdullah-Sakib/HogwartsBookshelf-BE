@@ -1,16 +1,5 @@
 export const role = ['user', 'admin'];
 
-export const UserSearchableFields = [
-  'role',
-  'phoneNumber',
-  'name.firstname',
-  'name.middlename',
-  'name.lastname',
-];
+export const UserSearchableFields = ['role', 'phoneNumber', 'name', 'email'];
 
-export const UserFilterableFields = [
-  'searchTerm',
-  'role',
-  'phoneNumber',
-  'address',
-];
+export const UserFilterableFields = ['searchTerm', 'role', 'phoneNumber'];

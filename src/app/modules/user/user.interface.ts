@@ -4,20 +4,15 @@ import { Model } from 'mongoose';
 export type IUser = {
   _id: string;
   password: string;
-  role: 'seller' | 'buyer';
-  name: {
-    firstName: string;
-    lastName: string;
-  };
-  phoneNumber: string;
-  address: string;
-  budget: number;
-  income: number;
+  role: 'user' | 'admin';
+  name: string;
+  email: string;
+  phone: string;
 };
 
 export type IUserMethods = {
   isUserExist(
-    phoneNumber: string
+    email: string
   ): Promise<Pick<IUser, 'role' | 'password' | '_id'> | null>;
 
   isPasswordMatch(givenPassword: string, savedPassword: string): boolean;

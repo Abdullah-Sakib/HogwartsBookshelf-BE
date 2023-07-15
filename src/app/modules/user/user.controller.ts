@@ -7,7 +7,6 @@ import { UserService } from './user.service';
 import { pick } from '../../../shared/pick';
 import { UserFilterableFields } from './user.constants';
 import { paginationFields } from '../../../constants/pagination';
-import { IAdmin } from '../admin/admin.interface';
 
 const getAllUser: RequestHandler = catchAsync(async (req, res) => {
   const filters = pick(req.query, UserFilterableFields);
@@ -65,7 +64,7 @@ const getMyProfile: RequestHandler = catchAsync(async (req, res) => {
   const user = req.user;
   const result = await UserService.getMyProfile(user);
 
-  sendResponse<IUser | IAdmin>(res, {
+  sendResponse<IUser>(res, {
     statusCode: httpStatus.OK,
     success: true,
     message: "User's information retrieved successfully",
