@@ -8,29 +8,33 @@ const router = express.Router();
 
 router.post(
   '/',
-  auth(ENUM_USER_ROLE.SELLER),
+  auth(ENUM_USER_ROLE.USER),
   validateRequest(BookValidation.createBookZodValidation),
   BookController.createBook
 );
 
 router.get(
   '/:id',
-  auth(ENUM_USER_ROLE.SELLER, ENUM_USER_ROLE.BUYER, ENUM_USER_ROLE.ADMIN),
+  auth(ENUM_USER_ROLE.USER, ENUM_USER_ROLE.ADMIN),
   BookController.getSingleBook
 );
 
-router.delete('/:id', auth(ENUM_USER_ROLE.SELLER), BookController.deleteBook);
+router.delete(
+  '/:id',
+  auth(ENUM_USER_ROLE.USER, ENUM_USER_ROLE.ADMIN),
+  BookController.deleteBook
+);
 
 router.patch(
   '/:id',
-  auth(ENUM_USER_ROLE.SELLER),
+  auth(ENUM_USER_ROLE.USER),
   validateRequest(BookValidation.updateBookZodValidation),
   BookController.updateBook
 );
 
 router.get(
   '/',
-  auth(ENUM_USER_ROLE.SELLER, ENUM_USER_ROLE.BUYER, ENUM_USER_ROLE.ADMIN),
+  auth(ENUM_USER_ROLE.USER, ENUM_USER_ROLE.ADMIN),
   BookController.getAllBooks
 );
 

@@ -6,14 +6,36 @@ import {
   IRefreshTokenResponse,
   IUserLogin,
   IUserLoginResponse,
+  IUserSignupResponse,
 } from './auth.interface';
 import { jwtHelpers } from '../../../helper/jwtHelpers';
 import { Secret } from 'jsonwebtoken';
 import config from '../../../config';
 
-const createUser = async (payload: IUser): Promise<IUser | null> => {
+const createUser = async (payload: IUser): Promise<IUserSignupResponse> => {
   const result = await User.create(payload);
-  return result;
+  let accessToken;
+  let refreshToken;
+  if (result) {
+    accessToken = jwtHelpers.createToken(
+      {
+        id: result._id,
+        role: result.role,
+      },
+      config.jwt.secret as Secret,
+      config.jwt.expires_in as string
+    );
+
+    refreshToken = jwtHelpers.createToken(
+      {
+        id: result._id,
+        role: result.role,
+      },
+      config.jwt.refresh_secret as Secret,
+      config.jwt.refresh_expires_in as string
+    );
+  }
+  return { result, refreshToken, accessToken };
 };
 
 const login = async (payload: IUserLogin): Promise<IUserLoginResponse> => {
