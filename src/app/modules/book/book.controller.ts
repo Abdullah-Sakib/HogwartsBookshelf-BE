@@ -65,9 +65,9 @@ const updateBook: RequestHandler = catchAsync(async (req, res) => {
   const id = req.params.id;
   const updateData = req.body;
 
-  const seller: JwtPayload | null = req?.user;
+  const user: JwtPayload | null = req?.user;
 
-  const result = await BookService.updateBook(id, updateData, seller);
+  const result = await BookService.updateBook(id, updateData, user);
 
   sendResponse<IBook>(res, {
     statusCode: httpStatus.OK,

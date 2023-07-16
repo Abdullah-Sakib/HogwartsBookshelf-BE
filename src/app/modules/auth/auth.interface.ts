@@ -12,6 +12,7 @@ export type IUserSignupResponse = {
 };
 
 export type IUserLoginResponse = {
+  userData: IUser | null;
   accessToken: string;
   refreshToken?: string;
 };

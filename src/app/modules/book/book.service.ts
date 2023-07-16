@@ -75,7 +75,7 @@ const getAllBooks = async (
 };
 
 const getSingleBook = async (id: string): Promise<IBook | null> => {
-  const result = await Book.findById(id).populate('seller');
+  const result = await Book.findById(id).populate('reviews');
   return result;
 };
 
@@ -101,7 +101,7 @@ const deleteBook = async (
 const updateBook = async (
   id: string,
   payload: Partial<IBook>,
-  seller: JwtPayload | null
+  user: JwtPayload | null
 ): Promise<IBook | null> => {
   const isExist = await Book.findOne({ _id: id });
   if (!isExist) {
@@ -109,10 +109,11 @@ const updateBook = async (
   }
 
   // check if the user is the owner of this cow or not.
-  const isSellerMatch = await Book.findOne({
-    $and: [{ _id: id }, { seller: seller && seller?.id }],
+  const isUserMatch = await Book.findOne({
+    $and: [{ _id: id }, { creator: user && user?.id }],
   });
-  if (!isSellerMatch) {
+
+  if (!isUserMatch) {
     throw new ApiError(
       httpStatus.FORBIDDEN,
       'your are not authorized to update this cow'
@@ -121,7 +122,7 @@ const updateBook = async (
 
   const result = await Book.findOneAndUpdate({ _id: id }, payload, {
     new: true,
-  }).populate('seller');
+  }).populate('reviews');
 
   return result;
 };

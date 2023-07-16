@@ -71,7 +71,10 @@ const login = async (payload: IUserLogin): Promise<IUserLoginResponse> => {
     config.jwt.refresh_expires_in as string
   );
 
+  const userData = await User.findOne({ _id: isUserExist._id });
+
   return {
+    userData,
     accessToken,
     refreshToken,
   };
