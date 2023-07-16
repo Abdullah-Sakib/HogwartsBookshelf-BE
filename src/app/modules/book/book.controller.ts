@@ -49,9 +49,9 @@ const getSingleBook: RequestHandler = catchAsync(async (req, res) => {
 
 const deleteBook: RequestHandler = catchAsync(async (req, res) => {
   const id = req.params.id;
-  const seller: JwtPayload | null = req?.user;
+  const user: JwtPayload | null = req?.user;
 
-  const result = await BookService.deleteBook(id, seller);
+  const result = await BookService.deleteBook(id, user);
 
   sendResponse<IBook>(res, {
     statusCode: httpStatus.OK,

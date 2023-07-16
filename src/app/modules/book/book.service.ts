@@ -81,20 +81,20 @@ const getSingleBook = async (id: string): Promise<IBook | null> => {
 
 const deleteBook = async (
   id: string,
-  seller: JwtPayload | null
+  user: JwtPayload | null
 ): Promise<IBook | null> => {
   // check if the user is the owner of this cow or not.
-  const isSellerMatch = await Book.findOne({
-    $and: [{ _id: id }, { seller: seller && seller?.id }],
+  const isUserMatch = await Book.findOne({
+    $and: [{ _id: id }, { creator: user && user?.id }],
   });
-  if (!isSellerMatch) {
+  if (!isUserMatch) {
     throw new ApiError(
       httpStatus.FORBIDDEN,
-      'your are not authorized to delete this cow.'
+      'your are not authorized to delete this book.'
     );
   }
 
-  const result = await Book.findByIdAndDelete(id).populate('seller');
+  const result = await Book.findByIdAndDelete(id).populate('reviews');
   return result;
 };
 
