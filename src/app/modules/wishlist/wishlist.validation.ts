@@ -8,8 +8,13 @@ const wishlistZodSchema = z.object({
     email: z.string({
       required_error: 'email is required',
     }),
-    bookId: z.string({
-      required_error: 'bookId is required',
+    bookId: z.object({
+      title: z.string(),
+      author: z.string(),
+      genre: z.string(),
+      publication_date: z.string(),
+      publication_year: z.string(),
+      image: z.string(),
     }),
   }),
 });

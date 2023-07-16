@@ -6,6 +6,7 @@ const createBookZodValidation = z.object({
     author: z.string(),
     genre: z.string(),
     publication_date: z.string(),
+    publication_year: z.string(),
     image: z.string(),
   }),
 });

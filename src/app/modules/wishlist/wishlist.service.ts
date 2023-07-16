@@ -8,6 +8,7 @@ import { User } from '../user/user.model';
 
 const getWishlist = async (id: string): Promise<IWishlist | null> => {
   const result = await Wishlist.findOne({ userId: id });
+
   return result;
 };
 
@@ -30,7 +31,7 @@ const addToWishlist = async (
       email: isExist?.email,
       wishlist: payload?.bookId,
     };
-    result = (await Wishlist.create(data)).populate('wishlist');
+    result = await Wishlist.create(data);
   } else {
     result = await Wishlist.findOneAndUpdate(
       { userId: isExist?._id },

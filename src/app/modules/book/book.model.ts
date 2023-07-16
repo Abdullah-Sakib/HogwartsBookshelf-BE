@@ -20,6 +20,10 @@ const bookSchema = new Schema(
       type: Date,
       required: true,
     },
+    publication_year: {
+      type: String,
+      required: true,
+    },
     image: {
       type: String,
       required: true,

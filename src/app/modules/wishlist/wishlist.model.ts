@@ -15,7 +15,7 @@ const wishlistSchema = new Schema<IWishlist>(
       required: true,
     },
     wishlist: {
-      type: [String],
+      type: [Object],
       required: true,
     },
   },
