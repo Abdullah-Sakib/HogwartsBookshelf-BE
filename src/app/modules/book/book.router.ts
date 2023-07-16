@@ -13,11 +13,7 @@ router.post(
   BookController.createBook
 );
 
-router.get(
-  '/:id',
-  auth(ENUM_USER_ROLE.USER, ENUM_USER_ROLE.ADMIN),
-  BookController.getSingleBook
-);
+router.get('/:id', BookController.getSingleBook);
 
 router.delete(
   '/:id',
@@ -32,10 +28,13 @@ router.patch(
   BookController.updateBook
 );
 
-router.get(
-  '/',
-  auth(ENUM_USER_ROLE.USER, ENUM_USER_ROLE.ADMIN),
-  BookController.getAllBooks
+router.patch(
+  '/add-review/:id',
+  auth(ENUM_USER_ROLE.USER),
+  validateRequest(BookValidation.updateBookZodValidation),
+  BookController.addReview
 );
+
+router.get('/', BookController.getAllBooks);
 
 export const BookRouter = router;

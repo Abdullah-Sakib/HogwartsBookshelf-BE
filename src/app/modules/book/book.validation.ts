@@ -17,6 +17,15 @@ const updateBookZodValidation = z.object({
     genre: z.string().optional(),
     publication_date: z.string().optional(),
     image: z.string().optional(),
+    reviews: z
+      .array(
+        z.object({
+          userName: z.string(),
+          review: z.string(),
+          userEmail: z.string(),
+        })
+      )
+      .optional(),
   }),
 });
 

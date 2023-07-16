@@ -77,10 +77,25 @@ const updateBook: RequestHandler = catchAsync(async (req, res) => {
   });
 });
 
+export const addReview: RequestHandler = catchAsync(async (req, res) => {
+  const id = req.params.id;
+  const updateData = req.body;
+
+  const result = await BookService.addReview(id, updateData);
+
+  sendResponse<IBook>(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: 'Review added successfully',
+    data: result,
+  });
+});
+
 export const BookController = {
   createBook,
   getAllBooks,
   getSingleBook,
   deleteBook,
   updateBook,
+  addReview,
 };

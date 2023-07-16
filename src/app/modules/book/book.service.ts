@@ -127,10 +127,30 @@ const updateBook = async (
   return result;
 };
 
+const addReview = async (
+  id: string,
+  payload: Partial<IBook>
+): Promise<IBook | null> => {
+  const isExist = await Book.findOne({ _id: id });
+  if (!isExist) {
+    throw new ApiError(httpStatus.BAD_REQUEST, 'book not found');
+  }
+  const result = await Book.findOneAndUpdate(
+    { _id: id },
+    { $push: { reviews: payload } },
+    {
+      new: true,
+    }
+  ).populate('reviews');
+
+  return result;
+};
+
 export const BookService = {
   createBook,
   getAllBooks,
   getSingleBook,
   deleteBook,
   updateBook,
+  addReview,
 };
